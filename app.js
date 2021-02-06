@@ -90,9 +90,6 @@ function startGame() {
     beachDay.loop = true;
     beachDay.play();
 
-    // $('#background-music')[0].play();
-    // $('#beach-day')[0].play();
-
     newGame = false;
     //hide info card
     $(".main-title").css("opacity", "0");
@@ -130,10 +127,20 @@ function startGame() {
 function showCursor() {
   const cursor = document.querySelector('.cursor');
   const cursorMini = document.querySelector('.cursor-mini');
-
+  var hoverCursor = false;
+  $('.day-button').hover(function(){hoverCursor = true});
+  $('.water-zone').hover(function(){hoverCursor = true});
+  $('.earth-zone').hover(function(){hoverCursor = true});
+  $('.day-button').mouseleave(function(){hoverCursor = false});
+  $('.water-zone').mouseleave(function(){hoverCursor = false});
+  $('.earth-zone').mouseleave(function(){hoverCursor = false});
   document.addEventListener('mousemove', e => {
       cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px;");
       cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px;");
+      if (hoverCursor == true) {
+        cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px; border: 1px solid #FFBD00;");
+        cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px; background: #FFBD00;");
+      }
   });
 
   document.addEventListener('click', () => {
