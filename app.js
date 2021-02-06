@@ -85,8 +85,11 @@ function startGame() {
   //if the game just started
   if (newGame == true) {
     //music
-    musicBackground.play();
+    // musicBackground.play();
     beachDay.play();
+
+    $('#background-music')[0].play();
+    // $('#beach-day')[0].play();
 
     newGame = false;
     //hide info card
