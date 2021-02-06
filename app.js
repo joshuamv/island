@@ -85,10 +85,12 @@ function startGame() {
   //if the game just started
   if (newGame == true) {
     //music
-    // musicBackground.play();
+    musicBackground.loop = true;
+    musicBackground.play();
+    beachDay.loop = true;
     beachDay.play();
 
-    $('#background-music')[0].play();
+    // $('#background-music')[0].play();
     // $('#beach-day')[0].play();
 
     newGame = false;
@@ -111,6 +113,7 @@ function startGame() {
 
     //play day beach sounds
     beachDay.load();
+    beachDay.loop = true;
     beachDay.play();
 
     $(".info-card").css("bottom", "-60%");
@@ -334,6 +337,7 @@ function playDayInVideo() {
 function nightIn() {
   // beachNight = new Audio('audio/beach-night.mp3');
   beachNight.load();
+  beachNight.loop = true;
   beachNight.play();
   //island was alone in daytime
   if (crab == false && fish == false) {
