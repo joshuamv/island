@@ -4,7 +4,8 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #ABC4D1;
+  /* background-color: #ABC4D1; */
+  background: red;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
