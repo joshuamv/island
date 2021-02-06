@@ -28,11 +28,10 @@ let gameoverState = false;
 let gamewonState = false;
 
 //audio
-var musicBackground = new Audio('audio/music.m4a');
+var musicBackground = new Audio('audio/music.mp3');
 var beachDay = new Audio('audio/beach-day.mp3');
 var beachNight = new Audio('audio/beach-night.mp3');
 var whaleSounds = new Audio('audio/whale-sound.mp3');
-
 
 //////////////// run when html loads /////////////////
 $(document).ready(function() {
