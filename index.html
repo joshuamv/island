@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-- links to css files -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- links to script libraries -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- other -->
+
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+    <meta charset="utf-8">
+
+
+    <!-- search engines and social -->
+
+    <meta name="description" content="Experience the secrets of nature firsthand through The Island.">
+    <meta name="keywords" content="The Island, Joshua, Milwer, Shenkar, HTML, CSS, JavaScript, usually curious">
+    <meta name="author" content="Joshua Milwer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://joshuamv.github.io/the-island/" />
+    <meta property="og:title" content="The Island" />
+    <meta property="og:description" content="Experience the secrets of nature firsthand through The Island." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/joshuamv/the-island/main/images/share-img.png" />
+    <meta property="og:type" content="game" />
+
+    <title>The Island</title>
+
+  </head>
+
+  <body>
+
+  <script src='confetti.js'></script>
+
+  <div class="cursor-mini"></div>
+  <div class="cursor"></div>
+
+    <!-- /* gameplay */ -->
+
+    <div class="top-container">
+      <div class="main-title">
+        <h1>The Island</h1>
+      </div>
+      <div class="day-button" id="day-button">
+        <div class="button-switch">
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video id="day-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/day.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="crab-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/crab.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="fish-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/fish.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="jellyfish-video-day" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/jellyfish-day.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="sunset-video" width="400" playsinline muted preload no-loop autoplay>
+        <source src="videos/sunset.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="rainbow-video" width="400" playsinline muted preload no-loop autoplay>
+        <source src="videos/rainbow.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="whale-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/whale.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video id="night-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/night.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="jellyfish-video-night" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/jellyfish-night.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="fireflies-video" width="400" playsinline muted preload loop autoplay>
+        <source src="videos/fireflies.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video id="sunrise-video" width="400" playsinline muted preload no-loop autoplay>
+        <source src="videos/sunrise.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="click-zone-container">
+        <div class="earth-zone" id="earth-zone"> </div>
+        <div class="water-zone" id="water-zone"> </div>
+      </div>
+
+    </div>
+
+
+    <!-- /* dev */ -->
+
+    <!-- <div class="dev-text">
+      <h3>animals</h3>
+      <div id="crab-dev">crab</div>
+      <div id="fish-dev">fish</div>
+      <div id="fireflies-dev">fireflies</div>
+      <div id="jellyfish-dev">jellyfish</div>
+      <h3>badges</h3>
+      <div id="sunrise-dev">sunrise</div>
+      <div id="sunset-dev">sunset</div>
+      <div id="whale-dev">whale</div>
+      <div id="rainbow-dev">rainbow</div>
+    </div> -->
+
+    <!-- /* gameover */ -->
+
+    <!-- /* badge won */ -->
+
+    <div id="info-card" class="info-card">
+      <div class="badge-container">
+        <div id="sunset-badge" class="badge-placeholder"> </div>
+        <div id="sunrise-badge" class="badge-placeholder"> </div>
+        <div id="whale-badge" class="badge-placeholder"> </div>
+        <div id="rainbow-badge" class="badge-placeholder"> </div>
+      </div>
+      <div class="text-card-container">
+        <h2>Welcome to The Island</h2>
+        <p id="p1">
+          The force of nature is slow but steady. This little island can give you the chance to
+          experience it firsthand with just a click from your mouse or a tap from your finger.
+        </p>
+        <p id="p2">
+          Breathe in, be patient and let the changes flourish. Secrets await.
+        </p>
+        <div class="button-containter">
+          <div id="card-button" class="card-button">
+            Begin
+          </div>
+          <div id="whatsapp-button" class="social-button">
+              <img src="images/whatsapp.svg" alt="whatsapp" class="social-icon">
+          </div>
+          <div id="facebook-button" class="social-button">
+            <img src="images/facebook.svg" alt="facebook" class="social-icon">
+          </div>
+          <div id="twitter-button" class="social-button">
+            <img src="images/twitter.svg" alt="twitter" class="social-icon">
+          </div>
+          <div id="replay-button" class="card-button">
+            Keep Exploring
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
