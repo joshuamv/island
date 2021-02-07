@@ -176,6 +176,8 @@ function startGame() {
   //if the game just started
   if (newGame == true) {
     //sound effects
+    musicBackground.loop = true;
+    musicBackground.play();
     beachDay.loop = true;
     beachDay.play();
 
@@ -372,7 +374,6 @@ function playDayInVideo() {
 }
 
 function nightIn() {
-  // beachNight = new Audio('audio/beach-night.mp3');
   beachNight.load();
   beachNight.loop = true;
   beachNight.play();
