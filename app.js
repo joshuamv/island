@@ -99,9 +99,6 @@ function loadingGame() {
     //play ready chime and music
     readyChime.load();
     readyChime.play();
-    musicBackground.load();
-    musicBackground.loop = true;
-    musicBackground.play();
 
     //change loader to start button
     $("#card-button").css("background", "#3e69de");
