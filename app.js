@@ -25,6 +25,7 @@ var musicBackground = new Audio('audio/music.mp3');
 var beachDay = new Audio('audio/beach-day.mp3');
 var beachNight = new Audio('audio/beach-night.mp3');
 var whaleSounds = new Audio('audio/whale-sound.mp3');
+var readyChime = new Audio('audio/chime.m4a');
 
 //////////////// run when html loads /////////////////
 $(document).ready(function() {
@@ -72,9 +73,32 @@ $(document).ready(function() {
 //////////////// functions /////////////////
 
 function loadingGame() {
+  //loader phrases
+  var loadingText = setTimeout(function() {
+    $("#card-button").html("Loading...");
+  }, 1500);
+  var sandText = setTimeout(function() {
+    $("#card-button").html("Gathering the sand...");
+  }, 3500);
+  var waterText = setTimeout(function() {
+    $("#card-button").html("Purifying the water...");
+  }, 5500);
+  var jellyText = setTimeout(function() {
+    $("#card-button").html("Cleaning the jellyfish...");
+  }, 7500);
+
   //check media has loaded
   musicBackground.oncanplaythrough = function(){
-    //play boot up sound
+    //clear timeouts for text changes
+    clearTimeout(loadingText);
+    clearTimeout(sandText);
+    clearTimeout(waterText);
+    clearTimeout(jellyText);
+
+    //play ready chime and music
+    readyChime.play();
+    musicBackground.loop = true;
+    musicBackground.play();
 
     //change loader to start button
     $("#card-button").css("background", "#3e69de");
@@ -155,9 +179,7 @@ function gameConfetti() {
 function startGame() {
   //if the game just started
   if (newGame == true) {
-    //music
-    musicBackground.loop = true;
-    musicBackground.play();
+    //sound effects
     beachDay.loop = true;
     beachDay.play();
 
