@@ -41,14 +41,16 @@ $(document).ready(function() {
 
   //check media has loaded
   musicBackground.oncanplaythrough = function(){
-    alert("ok");
-    //change loader to start button
-    //play start sound
-  };
+    //play boot up sound
 
-  $( "#card-button" ).click(function() {
-    startGame();
-  });
+    //change loader to start button
+    $("#card-button").css("background", "#3e69de");
+    $("#card-button").html("Begin")
+    //card button can be clicked
+    $( "#card-button" ).click(function() {
+      startGame();
+    });
+  };
 
   $( "#day-button" ).click(function() {
     dayButtonClicked();
@@ -198,6 +200,9 @@ function resetGame() {
   $("#facebook-button").hide();
   $("#twitter-button").hide();
   $("#replay-button").hide();
+  //move info card up
+  $(".info-card").css("bottom", "0%");
+
 }
 
 function gameWon() {
