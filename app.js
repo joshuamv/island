@@ -97,7 +97,9 @@ function loadingGame() {
     clearTimeout(jellyText);
 
     //play ready chime and music
+    readyChime.load();
     readyChime.play();
+    musicBackground.load();
     musicBackground.loop = true;
     musicBackground.play();
 
