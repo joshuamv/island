@@ -39,6 +39,8 @@ $(document).ready(function() {
   resetGame();
   showCursor();
 
+  musicBackground.oncanplay = function(){alert("ok");};
+
   $( "#card-button" ).click(function() {
     startGame();
   });
