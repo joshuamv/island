@@ -26,6 +26,7 @@ var beachDay = new Audio('audio/beach-day.mp3');
 var beachNight = new Audio('audio/beach-night.mp3');
 var whaleSounds = new Audio('audio/whale-sound.mp3');
 var readyChime = new Audio('audio/chime.m4a');
+var rainbowChime = new Audio('audio/rainbow.m4a');
 
 //////////////// run when html loads /////////////////
 $(document).ready(function() {
@@ -661,6 +662,7 @@ function playSunsetVideo() {
 
 function playRainbowVideo() {
   rainbow = true;
+  rainbowChime.play();
   displayBadges();
   //hide day button
   $(".day-button").css("opacity", "0");
