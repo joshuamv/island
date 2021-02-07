@@ -39,7 +39,12 @@ $(document).ready(function() {
   resetGame();
   showCursor();
 
-  musicBackground.oncanplay = function(){alert("ok");};
+  //check media has loaded
+  musicBackground.oncanplaythrough = function(){
+    alert("ok");
+    //change loader to start button
+    //play start sound
+  };
 
   $( "#card-button" ).click(function() {
     startGame();
