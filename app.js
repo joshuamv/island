@@ -1,5 +1,5 @@
 
-//////////////// global vars /////////////////
+//////////////// global var /////////////////
 
 //light
 let night = false;
@@ -16,16 +16,9 @@ let sunset = false;
 let rainbow = false;
 let whale = false;
 
-//pointer states
-let regularCursor = true;
-let waitCursor = false;
-let blackCursor = false;
-
 //game states
 let newGame = true;
 let gameStarted;
-let gameoverState = false;
-let gamewonState = false;
 
 //audio
 var musicBackground = new Audio('audio/music.mp3');
@@ -38,20 +31,9 @@ $(document).ready(function() {
 
   resetGame();
   showCursor();
+  loadingGame();
 
-  //check media has loaded
-  musicBackground.oncanplaythrough = function(){
-    //play boot up sound
-
-    //change loader to start button
-    $("#card-button").css("background", "#3e69de");
-    $("#card-button").html("Begin")
-    //card button can be clicked
-    $( "#card-button" ).click(function() {
-      startGame();
-    });
-  };
-
+  //add click functions to buttons and zones
   $( "#day-button" ).click(function() {
     dayButtonClicked();
   });
@@ -68,6 +50,7 @@ $(document).ready(function() {
     resetGame();
     startGame();
   });
+
   //social buttons
   $( "#whatsapp-button" ).click(function() {
     window.open("https://api.whatsapp.com/send?text=Nature%20is%20calling,%20check%20out%20The%20Island%20https://joshuamv.github.io/island/");
@@ -87,6 +70,85 @@ $(document).ready(function() {
 });
 
 //////////////// functions /////////////////
+
+function loadingGame() {
+  //check media has loaded
+  musicBackground.oncanplaythrough = function(){
+    //play boot up sound
+
+    //change loader to start button
+    $("#card-button").css("background", "#3e69de");
+    //add hover to button
+    $( "#card-button" ).hover(
+      function() {
+        $( this ).css("background-color","#2352D1");
+      }, function() {
+        $( this ).css("background-color","#3e69de");
+      }
+    );
+
+    $("#card-button").html("Begin");
+    //card button can be clicked
+    $( "#card-button" ).click(function() {
+      startGame();
+    });
+  };
+}
+
+function showCursor() {
+  const cursor = document.querySelector('.cursor');
+  const cursorMini = document.querySelector('.cursor-mini');
+  var hoverCursor = false;
+  $('.day-button').hover(function(){hoverCursor = true});
+  $('.water-zone').hover(function(){hoverCursor = true});
+  $('.earth-zone').hover(function(){hoverCursor = true});
+  $('.day-button').mouseleave(function(){hoverCursor = false});
+  $('.water-zone').mouseleave(function(){hoverCursor = false});
+  $('.earth-zone').mouseleave(function(){hoverCursor = false});
+  document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px;");
+      cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px;");
+      if (hoverCursor == true) {
+        cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px; border: 1px solid #FFBD00;");
+        cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px; background: #FFBD00;");
+      }
+  });
+
+  document.addEventListener('click', () => {
+      cursor.classList.add("expand");
+
+      setTimeout(() => {
+          cursor.classList.remove("expand");
+      }, 500)
+  });
+}
+
+function gameWon() {
+  //change card content when last video is done
+  setTimeout(function() {
+    //confetti
+    gameConfetti();
+    $(".info-card").css("display", "flex");
+    setTimeout(function() {
+      $(".info-card").css("bottom", "0%");
+    }, 100);
+    $("h2").html("You made it!");
+    $("#p1").html("Sunset, Sunrise, Whale and Rainbow. You earned all the badges!");
+    $("#p2").html("Now that you've mastered The Island, go ahead and share it with more people. Or just keep exploring it. Don't worry, you won't lose your badges.");
+    //hide blue card button
+    $("#card-button").hide();
+    //show social buttons and reply grey button
+    $("#whatsapp-button").show();
+    $("#facebook-button").show();
+    $("#twitter-button").show();
+    $("#replay-button").show();
+  }, 2000);
+}
+
+
+function gameConfetti() {
+  $("body").append("<script>confetti.start(3000, 100);</script>");
+}
 
 //click functions
 
@@ -133,34 +195,6 @@ function startGame() {
   }
 }
 
-function showCursor() {
-  const cursor = document.querySelector('.cursor');
-  const cursorMini = document.querySelector('.cursor-mini');
-  var hoverCursor = false;
-  $('.day-button').hover(function(){hoverCursor = true});
-  $('.water-zone').hover(function(){hoverCursor = true});
-  $('.earth-zone').hover(function(){hoverCursor = true});
-  $('.day-button').mouseleave(function(){hoverCursor = false});
-  $('.water-zone').mouseleave(function(){hoverCursor = false});
-  $('.earth-zone').mouseleave(function(){hoverCursor = false});
-  document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px;");
-      cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px;");
-      if (hoverCursor == true) {
-        cursor.setAttribute("style", "top: "+(e.pageY - 40)+"px; left: "+(e.pageX - 40)+"px; border: 1px solid #FFBD00;");
-        cursorMini.setAttribute("style", "top: "+(e.pageY - 4)+"px; left: "+(e.pageX - 4)+"px; background: #FFBD00;");
-      }
-  });
-
-  document.addEventListener('click', () => {
-      cursor.classList.add("expand");
-
-      setTimeout(() => {
-          cursor.classList.remove("expand");
-      }, 500)
-  });
-}
-
 function resetDaytime() {
   //hide all other videos
   $("#night-video").hide();
@@ -202,34 +236,6 @@ function resetGame() {
   $("#replay-button").hide();
   //move info card up
   $(".info-card").css("bottom", "0%");
-
-}
-
-function gameWon() {
-  //change card content when last video is done
-  setTimeout(function() {
-    //confetti
-    gameConfetti();
-    $(".info-card").css("display", "flex");
-    setTimeout(function() {
-      $(".info-card").css("bottom", "0%");
-    }, 100);
-    $("h2").html("You made it!");
-    $("#p1").html("Sunset, Sunrise, Whale and Rainbow. You earned all the badges!");
-    $("#p2").html("Now that you've mastered The Island, go ahead and share it with more people. Or just keep exploring it. Don't worry, you won't lose your badges.");
-    //hide blue card button
-    $("#card-button").hide();
-    //show social buttons and reply grey button
-    $("#whatsapp-button").show();
-    $("#facebook-button").show();
-    $("#twitter-button").show();
-    $("#replay-button").show();
-  }, 2000);
-}
-
-
-function gameConfetti() {
-  $("body").append("<script>confetti.start(3000, 100);</script>");
 }
 
 function dayButtonClicked() {
@@ -301,12 +307,6 @@ function waterZoneClicked() {
 function fadeVideo(videoIn, videoOut) {
   videoIn.fadeIn(100, "linear");
   videoOut.fadeOut(500, "linear");
-}
-
-function gameOverVideo() {
-  //sink island video day
-
-  //sink island video night
 }
 
 function dayIn() {

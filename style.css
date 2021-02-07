@@ -545,16 +545,6 @@ p{
   background: #49495A;
 }
 
-.card-button:hover{
-  background-color: #2352D1;
-  /* background-color: #E39726; */
-}
-
-.card-button:active{
-  background-color: #1E44AE;
-  /* background-color: #C7811A; */
-}
-
 /* dev */
 
 .dev-text{
