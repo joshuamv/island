@@ -61,15 +61,15 @@ $(document).ready(function() {
   });
   //social buttons
   $( "#whatsapp-button" ).click(function() {
-    window.open("https://api.whatsapp.com/send?text=Nature%20is%20calling,%20check%20out%20The%20Island%20https://joshuamv.github.io/the-island/");
+    window.open("https://api.whatsapp.com/send?text=Nature%20is%20calling,%20check%20out%20The%20Island%20https://joshuamv.github.io/island/");
   });
 
   $( "#facebook-button" ).click(function() {
-    window.open("https://www.facebook.com/sharer/sharer.php?u=https://joshuamv.github.io/the-island/");
+    window.open("https://www.facebook.com/sharer/sharer.php?u=https://joshuamv.github.io/island/");
   });
 
   $( "#twitter-button" ).click(function() {
-    window.open("http://twitter.com/share?text=Nature is calling, explore The Island?&url=https://joshuamv.github.io/the-island/&hashtags=TheIsland");
+    window.open("http://twitter.com/share?text=Nature is calling, explore The Island?&url=https://joshuamv.github.io/island/&hashtags=TheIsland");
   });
 
   // //dev
