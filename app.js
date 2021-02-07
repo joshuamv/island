@@ -96,10 +96,6 @@ function loadingGame() {
     clearTimeout(waterText);
     clearTimeout(jellyText);
 
-    //play ready chime and music
-    readyChime.load();
-    readyChime.play();
-
     //change loader to start button
     $("#card-button").css("background", "#3e69de");
     //add hover to button
