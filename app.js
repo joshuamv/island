@@ -129,7 +129,7 @@ function loadingGame() {
   }, 22000);
 
   //check media has loaded
-  musicBackground.onloadedmetadata = function(){
+  musicBackground.oncanplaythrough = function(){
     //clear timeouts for text changes
     clearTimeout(loadingText);
     clearTimeout(sandText);
