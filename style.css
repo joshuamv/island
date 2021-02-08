@@ -201,6 +201,15 @@ h1{
   -o-transition: margin-left 0.4s ease-in-out; /* Opera */
 }
 
+.video-container{
+  height: 65vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 #day-video{
   display: flex;
   position: absolute;
