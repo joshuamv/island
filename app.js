@@ -102,6 +102,38 @@ function loadingGame() {
     $("#card-button").html("Error, please refresh the page");
   }, 23000);
 
+  //check if it's a mobile device
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+   alert("phone vesrion");
+   //clear timeouts for text changes
+   clearTimeout(loadingText);
+   clearTimeout(sandText);
+   clearTimeout(waterText);
+   clearTimeout(sunText);
+   clearTimeout(crabText);
+   clearTimeout(fishText);
+   clearTimeout(fireText);
+   clearTimeout(jellyText);
+   clearTimeout(errorText);
+
+   //change loader to start button
+   $("#card-button").css("background", "#3e69de");
+   //add hover to button
+   $( "#card-button" ).hover(
+     function() {
+       $( this ).css("background-color","#2352D1");
+     }, function() {
+       $( this ).css("background-color","#3e69de");
+     }
+   );
+
+   $("#card-button").html("Begin");
+   //card button can be clicked
+   $( "#card-button" ).click(function() {
+     startGame();
+   });
+  }
+
   //check media has loaded
   musicBackground.oncanplaythrough = function(){
     //clear timeouts for text changes
