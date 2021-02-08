@@ -86,6 +86,18 @@ function loadingGame() {
   var jellyText = setTimeout(function() {
     $("#card-button").html("Cleaning the jellyfish...");
   }, 7500);
+  var crabText = setTimeout(function() {
+    $("#card-button").html("Polishing the crabs...");
+  }, 9500);
+  var fishText = setTimeout(function() {
+    $("#card-button").html("Feeding the fish...");
+  }, 11500);
+  var fireText = setTimeout(function() {
+    $("#card-button").html("Charging the fireflies...");
+  }, 13500);
+  var errorText = setTimeout(function() {
+    $("#card-button").html("Error, please refresh the page");
+  }, 15500);
 
   //check media has loaded
   musicBackground.oncanplaythrough = function(){
@@ -94,6 +106,10 @@ function loadingGame() {
     clearTimeout(sandText);
     clearTimeout(waterText);
     clearTimeout(jellyText);
+    clearTimeout(crabText);
+    clearTimeout(fishText);
+    clearTimeout(fireText);
+    clearTimeout(errorText);
 
     //change loader to start button
     $("#card-button").css("background", "#3e69de");
@@ -237,8 +253,8 @@ function resetDaytime() {
   //reset day button
   $(".button-switch").css("margin-left", "4px");
   //reset background
-  $("body").css("background-color", "#ABC4D1");
-  $(".button-switch").css("background-color", "#ABC4D1");
+  $("body").css("background-color", "#B1CDE0");
+  $(".button-switch").css("background-color", "#B1CDE0");
 }
 
 function resetGame() {
@@ -352,12 +368,12 @@ function dayIn() {
 
 function playDayInVideo() {
   //change main title color to blue
-  $("h1").css("color", "#B8D0DD");
+  $("h1").css("color", "#C1DCED");
   //island is alone
   if (jellyfish == false) {
     //change background and button to match day
-    $("body").css("background-color", "#ABC4D1");
-    $(".button-switch").css("background-color", "#ABC4D1");
+    $("body").css("background-color", "#B1CDE0");
+    $(".button-switch").css("background-color", "#B1CDE0");
     $("#day-video").show();
     $("#night-video").hide();
     return;
@@ -365,8 +381,8 @@ function playDayInVideo() {
   //island with jellyfish
   if (jellyfish == true) {
     //change background and button to match day
-    $("body").css("background-color", "#ABC4D1");
-    $(".button-switch").css("background-color", "#ABC4D1");
+    $("body").css("background-color", "#B1CDE0");
+    $(".button-switch").css("background-color", "#B1CDE0");
     $("#jellyfish-video-day").show();
     $("#jellyfish-video-night").hide();
     return;
@@ -405,7 +421,7 @@ function nightIn() {
 
 function playNightInVideo() {
   //change main title color to grey
-  $("h1").css("color", "#2B2B2B");
+  $("h1").css("color", "#2B2D36");
   //island is alone
   if (jellyfish == false) {
     //change background and button to match night
@@ -565,8 +581,8 @@ function playFirefliesOutVideo() {
     $("#fireflies-video").hide();
     $("#day-video").show();
     //make background and button daytime colors
-    $("body").css("background-color", "#ABC4D1");
-    $(".button-switch").css("background-color", "#ABC4D1");
+    $("body").css("background-color", "#B1CDE0");
+    $(".button-switch").css("background-color", "#B1CDE0");
     return;
   }
   alert("no if ran fireflies out");
@@ -601,8 +617,8 @@ function playSunriseVideo() {
   //pause night audio
   beachNight.pause();
   displayBadges();
-  $("body").css("background-color", "#D0BDDF");
-  $(".button-switch").css("background-color", "#D0BDDF");
+  $("body").css("background-color", "#DBCCED");
+  $(".button-switch").css("background-color", "#DBCCED");
   //hide day button
   $(".day-button").css("opacity", "0");
   // play sunrise video

@@ -4,7 +4,7 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #ABC4D1;
+  background-color: #B1CDE0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -146,7 +146,7 @@ h1{
   font-family: 'Poppins', sans-serif;
   font-size: 200px;
   font-weight: 400;
-  color: #B8D0DD;
+  color: #C1DCED;
   z-index: 3;
 }
 
