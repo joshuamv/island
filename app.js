@@ -79,25 +79,28 @@ function loadingGame() {
   }, 1500);
   var sandText = setTimeout(function() {
     $("#card-button").html("Gathering the sand...");
-  }, 3500);
+  }, 4000);
   var waterText = setTimeout(function() {
     $("#card-button").html("Purifying the water...");
-  }, 5500);
-  var jellyText = setTimeout(function() {
-    $("#card-button").html("Cleaning the jellyfish...");
-  }, 7500);
+  }, 6500);
+  var sunText = setTimeout(function() {
+    $("#card-button").html("Preparing the sun...");
+  }, 9000);
   var crabText = setTimeout(function() {
     $("#card-button").html("Polishing the crabs...");
-  }, 9500);
+  }, 11500);
   var fishText = setTimeout(function() {
     $("#card-button").html("Feeding the fish...");
-  }, 11500);
+  }, 14000);
   var fireText = setTimeout(function() {
     $("#card-button").html("Charging the fireflies...");
-  }, 13500);
+  }, 16500);
+  var jellyText = setTimeout(function() {
+    $("#card-button").html("Cleaning the jellyfish...");
+  }, 19000);
   var errorText = setTimeout(function() {
     $("#card-button").html("Error, please refresh the page");
-  }, 15500);
+  }, 23000);
 
   //check media has loaded
   musicBackground.oncanplaythrough = function(){
@@ -105,10 +108,11 @@ function loadingGame() {
     clearTimeout(loadingText);
     clearTimeout(sandText);
     clearTimeout(waterText);
-    clearTimeout(jellyText);
+    clearTimeout(sunText);
     clearTimeout(crabText);
     clearTimeout(fishText);
     clearTimeout(fireText);
+    clearTimeout(jellyText);
     clearTimeout(errorText);
 
     //change loader to start button
