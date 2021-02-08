@@ -244,6 +244,7 @@ function startGame() {
   if (newGame == false && gameStarted == true) {
     //give day button it's click back
     $( "#day-button" ).click(function() {
+      event.preventDefault();
       dayButtonClicked();
     });
     //play day beach sounds
