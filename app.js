@@ -219,8 +219,8 @@ function startGame() {
   //if the game just started
   if (newGame == true) {
     //sound effects
-    musicBackground.load();
     musicBackground.loop = true;
+    musicBackground.load();
     musicBackground.play();
     beachDay.loop = true;
     beachDay.play();
