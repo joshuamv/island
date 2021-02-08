@@ -118,10 +118,8 @@ function showCursor() {
   const cursor = document.querySelector('.cursor');
   const cursorMini = document.querySelector('.cursor-mini');
   var hoverCursor = false;
-  $('.day-button').hover(function(){hoverCursor = true});
   $('.water-zone').hover(function(){hoverCursor = true});
   $('.earth-zone').hover(function(){hoverCursor = true});
-  $('.day-button').mouseleave(function(){hoverCursor = false});
   $('.water-zone').mouseleave(function(){hoverCursor = false});
   $('.earth-zone').mouseleave(function(){hoverCursor = false});
   document.addEventListener('mousemove', e => {
@@ -197,7 +195,10 @@ function startGame() {
   }
   //if continuing the game after winning one badge
   if (newGame == false && gameStarted == true) {
-
+    //give day button it's click back
+    $( "#day-button" ).click(function() {
+      dayButtonClicked();
+    });
     //play day beach sounds
     beachDay.load();
     beachDay.loop = true;
@@ -574,6 +575,8 @@ function playFirefliesOutVideo() {
 //badges
 
 function displayBadges() {
+  //get rid of day button click
+  $('#day-button').off('click');
   //check which badges to display
   if (sunrise == true) {
     $("#sunrise-badge").html('<img src="images/sunrise-badge.png" alt="sunrise-badge" />');
