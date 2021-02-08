@@ -123,7 +123,7 @@ function loadingGame() {
 
     $("#card-button").html("Begin");
     //card button can be clicked
-    $( "#card-button" ).click(function() {
+    $('#card-button').off('click').on('click', function(){
       startGame();
     });
   }, 22000);
@@ -154,7 +154,7 @@ function loadingGame() {
 
     $("#card-button").html("Begin");
     //card button can be clicked
-    $( "#card-button" ).click(function() {
+    $('#card-button').off('click').on('click', function(){
       startGame();
     });
   };
@@ -243,8 +243,7 @@ function startGame() {
   //if continuing the game after winning one badge
   if (newGame == false && gameStarted == true) {
     //give day button it's click back
-    $( "#day-button" ).click(function() {
-      event.preventDefault();
+    $('#day-button').off('click').on('click', function(){
       dayButtonClicked();
     });
     //play day beach sounds
