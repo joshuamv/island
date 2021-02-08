@@ -100,7 +100,7 @@ function loadingGame() {
   }, 19000);
   var errorText = setTimeout(function() {
     $("#card-button").html("Error, please refresh the page");
-  }, 23000);
+  }, 60000);
 
   //check if it's a mobile device
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
