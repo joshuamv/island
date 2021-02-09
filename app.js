@@ -678,8 +678,8 @@ function playSunriseVideo() {
 function playSunsetVideo() {
   sunset = true;
   displayBadges();
-  $("body").css("background-color", "#DF942F");
-  $(".button-switch").css("background-color", "#DF942F");
+  $("body").css("background-color", "#FD8824");
+  $(".button-switch").css("background-color", "#FD8824");
   //hide day button
   $(".day-button").css("opacity", "0");
   // play sunset video
