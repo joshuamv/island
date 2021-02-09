@@ -670,7 +670,7 @@ function playSunriseVideo() {
     }, 100);
     $("#card-button").html("Continue");
     $("h2").html("The Sunrise badge!");
-    $("#p1").html("Daytime can only last for so long. You’ve discovered sunrises!");
+    $("#p1").html("Nighttime can only last for so long. You’ve discovered sunrises!");
     $("#p2").html("There's still more to discover whenever you're ready.");
   }, 2000);
 }
