@@ -731,7 +731,7 @@ function playRainbowVideo() {
     $("h2").html("The Rainbow badge!");
     $("#p1").html("Amazing what a little water and a little sun can do. Isn’t that one the most colorful badges you’ve ever seen?");
     $("#p2").html("There's still more to discover whenever you're ready.");
-  }, 3000);
+  }, 2000);
 }
 
 function playWhaleVideo() {
@@ -763,7 +763,7 @@ function playWhaleVideo() {
     $("h2").html("The Whale badge!");
     $("#p1").html("You’ve earned the badge of the oceans. That’s one of the rare ones!");
     $("#p2").html("There's still more to discover whenever you're ready.");
-  }, 3000);
+  }, 2000);
 }
 
 //dev
