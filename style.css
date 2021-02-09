@@ -628,3 +628,10 @@ p{
     width: 300px;
   }
 }
+
+@media only screen and (max-height: 700px) {
+
+  .day-button{
+    top: 10%;
+  }
+}
