@@ -111,7 +111,7 @@ function loadingGame() {
     clearTimeout(errorText);
 
     //change loader to start button
-    $("#card-button").css("background", "#3e69de");
+    $("#card-button").css("background-color", "#3e69de");
     //add hover to button
     $( "#card-button" ).hover(
       function() {
