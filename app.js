@@ -53,6 +53,10 @@ $(document).ready(function() {
   });
 
   //social buttons
+  $( "#instagram-link" ).click(function() {
+    window.open("https://www.instagram.com/usuallycurious/");
+  });
+
   $( "#whatsapp-button" ).click(function() {
     window.open("https://api.whatsapp.com/send?text=Nature%20is%20calling,%20check%20out%20The%20Island%20https://joshuamv.github.io/island/");
   });
@@ -205,6 +209,10 @@ function gameWon() {
     $("#facebook-button").show();
     $("#twitter-button").show();
     $("#replay-button").show();
+    //highlight instagram link
+    setTimeout(function() {
+      $("#instagram-link").addClass("instagram-link-highlighted");
+    }, 800);
   }, 2000);
 }
 

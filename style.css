@@ -480,6 +480,38 @@ p{
   height: auto;
 }
 
+.instagram-link{
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  opacity: 20%;
+  margin: 20px;
+  width: 35px;
+  height: auto;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.instagram-link:hover{
+  opacity: 80%;
+  border-radius: 10px;
+}
+
+.instagram-link-highlighted{
+  border-radius: 10px;
+  opacity: 80%;
+  transition: box-shadow 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.instagram-link-highlighted:hover{
+  opacity: 100%;
+  box-shadow: -0px -0px 10px #FFFFFF;
+}
+
 #card-button{
   display: flex;
 }
