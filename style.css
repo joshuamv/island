@@ -572,7 +572,7 @@ canvas {
 
 @media only screen and (max-width: 1200px) {
   h1{
-    font-size: 140px;
+    font-size: 120px;
   }
 
   .main-title{
@@ -582,7 +582,7 @@ canvas {
 
 @media only screen and (max-width: 800px) {
   h1{
-    font-size: 80px;
+    font-size: 60px;
   }
 
   .main-title{
@@ -592,7 +592,7 @@ canvas {
 
 @media only screen and (max-width: 400px) {
   h1{
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .main-title{
