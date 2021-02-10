@@ -598,52 +598,6 @@ canvas {
   .main-title{
     top: 12%;
   }
-
-  #day-video{
-    width: 300px;
-  }
-
-  #crab-video{
-    width: 300px;
-  }
-
-  #fish-video{
-    width: 300px;
-  }
-
-  #jellyfish-video-day{
-    width: 300px;
-  }
-
-  #sunset-video{
-    width: 300px;
-  }
-
-  #rainbow-video{
-    width: 300px;
-  }
-
-  #whale-video{
-    width: 300px;
-  }
-
-  #night-video{
-    width: 300px;
-    filter: brightness(110%);
-    -webkit-filter: brightness(110%);
-  }
-
-  #jellyfish-video-night{
-    width: 300px;
-  }
-
-  #fireflies-video{
-    width: 300px;
-  }
-
-  #sunrise-video{
-    width: 300px;
-  }
 }
 
 @media only screen and (max-height: 700px) {
